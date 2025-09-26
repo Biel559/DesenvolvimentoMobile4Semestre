@@ -40,26 +40,25 @@ class Restaurant {
 
   // queremos receber o mapa para criar o restaurante
 
-factory Restaurant.fromMap(Map<String,dynamic>map){
-  return Restaurant(
-    id: map['id'],
-    imagePath: map['imagePath'],
-    name: map['name'], 
-    description: map['description'], 
-    stars: map['stars'] is int ? (map['stars'] as int).toDouble() : map['stars'], // trata int/double
-    distance: map['distance'] ?? 0, // trata null
-    categories: List<String>.from(map['categories']), 
-    dishes: List<Dish>.from(
-      (map['dishes'] as List).map((dish) => Dish.fromMap(dish))
-    ),
-  );
+  factory Restaurant.fromMap(Map<String,dynamic>map){
+    return Restaurant(
+      id: map['id'],
+       imagePath: map['imagePath'],
+        name: map['name'], 
+        description: map['description'], 
+        stars: map['stars'], 
+        distance: map['distance'], 
+        categories: List<String>.from(map['categories']), 
+        dishes: List<Dish>.from(map['dishes'].map((dish)=>Dish.fromMap(dish))),
+        
+    );
 }
 
 // Função para converter para string
 @override
 
 String toString(){
-  return ''' Restaurant{
+  return ''' Restaurant(
   id: $id,
   imagePath: $imagePath,
   name: $name,
@@ -67,6 +66,6 @@ String toString(){
   stars: $stars,
   distance: $distance,
   categories: $categories
-  }''';
+  )''';
 }
 }

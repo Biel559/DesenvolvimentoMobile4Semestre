@@ -1,0 +1,42 @@
+{
+  "usuario": [
+    {
+      "id": "1",
+      "nome": "Admin",
+      "email": "admin@hotel.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "nome": "Usuário Teste",
+      "email": "teste@email.com",
+      "password": "senha123"
+    },
+    {
+      "id": "3",
+      "nome": "admin",
+      "email": "admin@admin.com",
+      "password": "admin"
+    },
+    {
+      "id": "4",
+      "nome": "a",
+      "email": "a@a.com",
+      "password": "a"
+    }
+  ],
+  "cadastro-usuario": [
+    {
+      "id": "0d30",
+      "nome": "admin",
+      "email": "admin@admin.com",
+      "password": "admin"
+    },
+    {
+      "id": "eecd",
+      "nome": "a",
+      "email": "a@a.com",
+      "password": "a"
+    }
+  ]
+}

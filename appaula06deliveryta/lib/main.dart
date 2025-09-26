@@ -5,15 +5,17 @@ import 'package:appaula06deliveryta/ui/widgets/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized(); // serve para carregar a tela do app sem ficar esperando o provider ou banco de dados ser carregado
   RestaurantData restaurantData = RestaurantData();
   await restaurantData.getRestaurant();
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value: restaurantData),
-        ChangeNotifierProvider(create: (context) => BagProvider()),
+        ChangeNotifierProvider(create: (context){
+          return restaurantData;
+        }),
+        ChangeNotifierProvider(create: (context)=>BagProvider())
       ],
       child: MyApp(),
       ));
